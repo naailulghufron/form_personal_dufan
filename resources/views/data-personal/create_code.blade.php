@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
-    <title>Form Personal | PT. Cabinindo Putra</title>
+    <title>Form Famday | PT. Cabinindo Putra</title>
     <style>
         label.required:after {
             content: '*';
@@ -147,7 +147,8 @@
                             @csrf <!-- Menambahkan token CSRF untuk keamanan -->
                             <div class="form-group">
                                 <label for="kode" class="sr-only">Kode:</label>
-                                <input type="text" class="form-control text-center" id="code" name="code" placeholder="Input kode">
+                                <input type="text" class="form-control text-center" id="code" name="code"
+                                    placeholder="Input kode">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Submit</button>
                         </form>
@@ -177,65 +178,70 @@
             $('body .lds-spinner').css('display', 'none')
 
             $('#tambahKeluarga').click(function() {
-        
-        
-                
-        var newKeluarga = $('<div class="col-md-4 mb-4">' +
-                                '<div class="card">' +
-                                    '<div class="card-body">' +
-                                        '<div class="form-group">' +
-                                            '<label class="required">Status Hubungan</label>' +
-                                            '<select class="form-control form-control-sm text-uppercase" id="status_relation_'+ countRow +'" name="status_relation[]">' +
-                                                '<option value="">--- PILIH ---</option>' +
-                                                '<option value="Pasangan">Pasangan</option>' +
-                                                '<option value="Anak 1">Anak 1</option>' +
-                                                '<option value="Anak 2">Anak 2</option>' +
-                                                '<option value="Anak 3">Anak 3</option>' +
-                                            '</select>' +
-                                        '</div>' +
-                                        '<div class="form-group">' +
-                                            
-                                            '<label class="required">Nama Lengkap</label>' +
-                                            '<input type="text" id="family_fullname_'+ countRow +'" name="family_fullname[]" class="form-control form-control-sm text-uppercase">' +
-                                        '</div>' +
-                                        '<div class="form-group">' +
-                                            '<label>Kode Anuall Pass Dufan</label>' +
-                                            '<input type="text" id="family_no_card_'+ countRow +'" name="family_no_card[]" class="form-control form-control-sm text-uppercase">' +
-                                        '</div>' +
-                                        '<div class="form-group">' +
-                                            '<label>Upload Kartu Dufan</label>' +
-                                            '<input type="file" id="family_upload_file_'+ countRow +'" accept=".pdf, .png, .jpg" name="family_upload_file[]" class="form-control form-control-sm text-uppercase">' +
-                                        '</div>' +
-                                        '<button class="btn btn-danger btn-sm btn-delete">Hapus</button>' +
-                                    '</div>' +
-                                '</div>' +
-                            '</div>');
 
-        // Tambahkan event handler untuk tombol hapus
-        newKeluarga.find('.btn-delete').click(function() {
-            var length = $('.row-family').children().length;
-        if (length > 0) {
-            $('#label-family').show();
-            } else {
-            $('#label-family').hide();
-        }
-            $(this).closest('.col-md-4').remove(); // Hapus kartu keluarga saat tombol hapus diklik
-        });
-        
-        
-        $('.row-family').append(newKeluarga); // Tambahkan elemen baru ke dalam container
 
-        countRow = $('.row-family').children().length;
-        var length = $('.row-family').children().length;
-        if (length > 0) {
-            $('#label-family').show();
-            } else {
-            $('#label-family').hide();
 
-        }
-    });
+                var newKeluarga = $('<div class="col-md-4 mb-4">' +
+                    '<div class="card">' +
+                    '<div class="card-body">' +
+                    '<div class="form-group">' +
+                    '<label class="required">Status Hubungan</label>' +
+                    '<select class="form-control form-control-sm text-uppercase" id="status_relation_' +
+                    countRow + '" name="status_relation[]">' +
+                    '<option value="">--- PILIH ---</option>' +
+                    '<option value="Pasangan">Pasangan</option>' +
+                    '<option value="Anak 1">Anak 1</option>' +
+                    '<option value="Anak 2">Anak 2</option>' +
+                    '<option value="Anak 3">Anak 3</option>' +
+                    '</select>' +
+                    '</div>' +
+                    '<div class="form-group">' +
 
-   
+                    '<label class="required">Nama Lengkap</label>' +
+                    '<input type="text" id="family_fullname_' + countRow +
+                    '" name="family_fullname[]" class="form-control form-control-sm text-uppercase">' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                    '<label>Kode Anuall Pass Dufan</label>' +
+                    '<input type="text" id="family_no_card_' + countRow +
+                    '" name="family_no_card[]" class="form-control form-control-sm text-uppercase">' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                    '<label>Upload Kartu Dufan</label>' +
+                    '<input type="file" id="family_upload_file_' + countRow +
+                    '" accept=".pdf, .png, .jpg" name="family_upload_file[]" class="form-control form-control-sm text-uppercase">' +
+                    '</div>' +
+                    '<button class="btn btn-danger btn-sm btn-delete">Hapus</button>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>');
+
+                // Tambahkan event handler untuk tombol hapus
+                newKeluarga.find('.btn-delete').click(function() {
+                    var length = $('.row-family').children().length;
+                    if (length > 0) {
+                        $('#label-family').show();
+                    } else {
+                        $('#label-family').hide();
+                    }
+                    $(this).closest('.col-md-4')
+                .remove(); // Hapus kartu keluarga saat tombol hapus diklik
+                });
+
+
+                $('.row-family').append(newKeluarga); // Tambahkan elemen baru ke dalam container
+
+                countRow = $('.row-family').children().length;
+                var length = $('.row-family').children().length;
+                if (length > 0) {
+                    $('#label-family').show();
+                } else {
+                    $('#label-family').hide();
+
+                }
+            });
+
+
         })
 
         function changeSesuai(e) {
@@ -295,10 +301,10 @@
                 )
             } else {
                 Swal.fire(
-                'Terima Kasih!',
-                'Submit data berhasil',
-                'success'
-            )
+                    'Terima Kasih!',
+                    'Submit data berhasil',
+                    'success'
+                )
             }
 
 
