@@ -207,14 +207,7 @@
                 </div>
                 
 
-                <br>
-                <div class="card p-3">
-                    <div>
-                        <button class="btn btn-xl btn-primary" type="button" id="tambahKeluarga">Tambah Keluarga</button>
-                    </div>
-                <p class="text-danger">*Silahkan Klik tombol diatas sesuai dengan jumlah keluarga anda</p>
-                <p class="text-danger">*Silahkan isi dan upload Annual pass jika memiliki kartu Annual Pass</p>
-                </div>
+               
                
                 <br>
                 <div class="family-container">
@@ -223,6 +216,15 @@
                         <h5>Kartu Dufan Keluarga</h5>
                     </div>
                     <div class="row row-family"></div>
+                </div>
+
+                <br>
+                <div class="card p-3">
+                    <div>
+                        <button class="btn btn-xl btn-primary" type="button" id="tambahKeluarga">Tambah Keluarga</button>
+                    </div>
+                <p class="text-danger">*Silahkan Klik tombol diatas sesuai dengan jumlah keluarga anda</p>
+                <p class="text-danger">*Silahkan isi dan upload Annual pass jika memiliki kartu Annual Pass</p>
                 </div>
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-success">Submit</button>
@@ -268,7 +270,7 @@
                                         '</div>' +
                                         '<div class="form-group">' +
                                             
-                                            '<label class="required">Nama Lengkap</label>' +
+                                            '<label class="required">Nama Annual Pass</label>' +
                                             '<input type="text" id="family_fullname_'+ countRow +'" name="family_fullname[]" class="form-control form-control-sm text-uppercase">' +
                                         '</div>' +
                                         '<div class="form-group">' +
