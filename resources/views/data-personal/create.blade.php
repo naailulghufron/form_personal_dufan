@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="icon" type="image/png" href="/image/favicon-16x16.png" />
 
-    <title>Form Personal | PT. Cabinindo Putra</title>
+    <title>Form Famday | PT. Cabinindo Putra</title>
     <style>
         label.required:after {
             content: '*';
@@ -309,7 +309,7 @@
                         $('#label-family').hide();
                     }
                     $(this).closest('.col-md-4')
-                .remove(); // Hapus kartu keluarga saat tombol hapus diklik
+                        .remove(); // Hapus kartu keluarga saat tombol hapus diklik
                 });
 
 
