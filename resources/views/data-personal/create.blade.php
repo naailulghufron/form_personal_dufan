@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="icon" type="image/png" href="/image/favicon-16x16.png" />
 
     <title>Form Personal | PT. Cabinindo Putra</title>
     <style>
@@ -156,9 +157,10 @@
         <div class="card-body">
             <div class="text-center">
                 <h3>Tiket Annual Pass Dufan - PT. Cabinindo Putra</h3>
-                <h6>Kuesioner ini bertujuan untuk menghimpun seluruh kartu Annual Pass Dufan 2023-2024 dari Cabinindo Putra 
-                   <br> sebagai backup (data cadangan)  pada saat hari H family Day 2024 . 
-                    </h6>
+                <h6>Kuesioner ini bertujuan untuk menghimpun seluruh kartu Annual Pass Dufan 2023-2024 dari Cabinindo
+                    Putra
+                    <br> sebagai backup (data cadangan) pada saat hari H family Day 2024 .
+                </h6>
             </div>
             <hr>
             <form id="submitPersonal" enctype="multipart/form-data" method="POST">
@@ -173,46 +175,53 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="required">NIK</label>
-                                        <input type="number" id="nik" name="nik" class="form-control form-control-sm text-uppercase" placeholder="Masukan 5 Digit NIK">
-                                        <small class="text-primary">Contoh : 00000</small>
+                                    <input type="number" id="nik" name="nik"
+                                        class="form-control form-control-sm text-uppercase"
+                                        placeholder="Masukan 5 Digit NIK">
+                                    <small class="text-primary">Contoh : 00000</small>
                                 </div>
                                 <div class="form-group">
                                     <label class="required">Nama Lengkap</label>
-                                        <input type="text" id="namaLengkap" name="namaLengkap" class="form-control form-control-sm text-uppercase">
+                                    <input type="text" id="namaLengkap" name="namaLengkap"
+                                        class="form-control form-control-sm text-uppercase">
                                 </div>
                             </div>
-                            
+
                             <div class="col-md-5">
 
                                 <div class="form-group">
                                     <label for="">Contoh :</label>
-                                    <img src="{{ asset('image/example_annual_pass.jpg') }}" width="300px;" alt="">
+                                    <img src="{{ asset('image/example_annual_pass.jpg') }}" width="300px;"
+                                        alt="">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label class="">Kode Annual Pass Dufan</label>
-                                        <input type="text" id="no_dufan_card" name="no_dufan_card" class="form-control form-control-sm text-uppercase">
+                                    <input type="text" id="no_dufan_card" name="no_dufan_card"
+                                        class="form-control form-control-sm text-uppercase">
                                 </div>
                                 <div class="form-group">
                                     <label class="">Upload Kartu Annual Pass Dufan</label>
-                                        <input name="dufan_card" id="dufan_card" value="{{ old('dufan_card') }}" type="file" accept=".pdf, .png, .jpg" class="form-control form-control-sm text-uppercase">
+                                    <input name="dufan_card" id="dufan_card" value="{{ old('dufan_card') }}"
+                                        type="file" accept=".pdf, .png, .jpg"
+                                        class="form-control form-control-sm text-uppercase">
                                 </div>
                             </div>
 
-                            
+
                         </div>
                     </div>
 
-                   
-                </div>
-                
 
-               
-               
+                </div>
+
+
+
+
                 <br>
                 <div class="family-container">
                     <div id="label-family" style="display: none";>
-                        
+
                         <h5>Kartu Dufan Keluarga</h5>
                     </div>
                     <div class="row row-family"></div>
@@ -221,10 +230,11 @@
                 <br>
                 <div class="card p-3">
                     <div>
-                        <button class="btn btn-xl btn-primary" type="button" id="tambahKeluarga">Tambah Keluarga</button>
+                        <button class="btn btn-xl btn-primary" type="button" id="tambahKeluarga">Tambah
+                            Keluarga</button>
                     </div>
-                <p class="text-danger">*Silahkan Klik tombol diatas sesuai dengan jumlah keluarga anda</p>
-                <p class="text-danger">*Silahkan isi dan upload Annual pass jika memiliki kartu Annual Pass</p>
+                    <p class="text-danger">*Silahkan Klik tombol diatas sesuai dengan jumlah keluarga anda</p>
+                    <p class="text-danger">*Silahkan isi dan upload Annual pass jika memiliki kartu Annual Pass</p>
                 </div>
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-success">Submit</button>
@@ -252,65 +262,70 @@
             $('body .lds-spinner').css('display', 'none')
 
             $('#tambahKeluarga').click(function() {
-        
-        
-                
-        var newKeluarga = $('<div class="col-md-4 mb-4">' +
-                                '<div class="card">' +
-                                    '<div class="card-body">' +
-                                        '<div class="form-group">' +
-                                            '<label class="required">Status Hubungan</label>' +
-                                            '<select class="form-control form-control-sm text-uppercase" id="status_relation_'+ countRow +'" name="status_relation[]">' +
-                                                '<option value="">--- PILIH ---</option>' +
-                                                '<option value="Pasangan">Pasangan</option>' +
-                                                '<option value="Anak 1">Anak 1</option>' +
-                                                '<option value="Anak 2">Anak 2</option>' +
-                                                '<option value="Anak 3">Anak 3</option>' +
-                                            '</select>' +
-                                        '</div>' +
-                                        '<div class="form-group">' +
-                                            
-                                            '<label class="required">Nama Annual Pass</label>' +
-                                            '<input type="text" id="family_fullname_'+ countRow +'" name="family_fullname[]" class="form-control form-control-sm text-uppercase">' +
-                                        '</div>' +
-                                        '<div class="form-group">' +
-                                            '<label>Kode Annual Pass Dufan</label>' +
-                                            '<input type="text" id="family_no_card_'+ countRow +'" name="family_no_card[]" class="form-control form-control-sm text-uppercase">' +
-                                        '</div>' +
-                                        '<div class="form-group">' +
-                                            '<label>Upload Kartu Dufan</label>' +
-                                            '<input type="file" id="family_upload_file_'+ countRow +'" accept=".pdf, .png, .jpg" name="family_upload_file[]" class="form-control form-control-sm text-uppercase">' +
-                                        '</div>' +
-                                        '<button class="btn btn-danger btn-sm btn-delete">Hapus</button>' +
-                                    '</div>' +
-                                '</div>' +
-                            '</div>');
 
-        // Tambahkan event handler untuk tombol hapus
-        newKeluarga.find('.btn-delete').click(function() {
-            var length = $('.row-family').children().length;
-        if (length > 0) {
-            $('#label-family').show();
-            } else {
-            $('#label-family').hide();
-        }
-            $(this).closest('.col-md-4').remove(); // Hapus kartu keluarga saat tombol hapus diklik
-        });
-        
-        
-        $('.row-family').append(newKeluarga); // Tambahkan elemen baru ke dalam container
 
-        countRow = $('.row-family').children().length;
-        var length = $('.row-family').children().length;
-        if (length > 0) {
-            $('#label-family').show();
-            } else {
-            $('#label-family').hide();
 
-        }
-    });
+                var newKeluarga = $('<div class="col-md-4 mb-4">' +
+                    '<div class="card">' +
+                    '<div class="card-body">' +
+                    '<div class="form-group">' +
+                    '<label class="required">Status Hubungan</label>' +
+                    '<select class="form-control form-control-sm text-uppercase" id="status_relation_' +
+                    countRow + '" name="status_relation[]">' +
+                    '<option value="">--- PILIH ---</option>' +
+                    '<option value="Pasangan">Pasangan</option>' +
+                    '<option value="Anak 1">Anak 1</option>' +
+                    '<option value="Anak 2">Anak 2</option>' +
+                    '<option value="Anak 3">Anak 3</option>' +
+                    '</select>' +
+                    '</div>' +
+                    '<div class="form-group">' +
 
-   
+                    '<label class="required">Nama Annual Pass</label>' +
+                    '<input type="text" id="family_fullname_' + countRow +
+                    '" name="family_fullname[]" class="form-control form-control-sm text-uppercase">' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                    '<label>Kode Annual Pass Dufan</label>' +
+                    '<input type="text" id="family_no_card_' + countRow +
+                    '" name="family_no_card[]" class="form-control form-control-sm text-uppercase">' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                    '<label>Upload Kartu Dufan</label>' +
+                    '<input type="file" id="family_upload_file_' + countRow +
+                    '" accept=".pdf, .png, .jpg" name="family_upload_file[]" class="form-control form-control-sm text-uppercase">' +
+                    '</div>' +
+                    '<button class="btn btn-danger btn-sm btn-delete">Hapus</button>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>');
+
+                // Tambahkan event handler untuk tombol hapus
+                newKeluarga.find('.btn-delete').click(function() {
+                    var length = $('.row-family').children().length;
+                    if (length > 0) {
+                        $('#label-family').show();
+                    } else {
+                        $('#label-family').hide();
+                    }
+                    $(this).closest('.col-md-4')
+                .remove(); // Hapus kartu keluarga saat tombol hapus diklik
+                });
+
+
+                $('.row-family').append(newKeluarga); // Tambahkan elemen baru ke dalam container
+
+                countRow = $('.row-family').children().length;
+                var length = $('.row-family').children().length;
+                if (length > 0) {
+                    $('#label-family').show();
+                } else {
+                    $('#label-family').hide();
+
+                }
+            });
+
+
         })
 
         function changeSesuai(e) {
@@ -370,10 +385,10 @@
                 )
             } else {
                 Swal.fire(
-                'Terima Kasih!',
-                'Submit data berhasil',
-                'success'
-            )
+                    'Terima Kasih!',
+                    'Submit data berhasil',
+                    'success'
+                )
             }
 
 
