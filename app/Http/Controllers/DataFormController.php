@@ -20,18 +20,25 @@ class DataFormController extends Controller
 {
     public function submit(Request $request)
     {
+        
             $validator = Validator::make($request->all(), [
                 'dufan_card' => 'nullable|file|mimes:pdf,png,jpg,jpeg|max:2048',
                 'nik' => 'required|numeric|digits:5',
                 'namaLengkap' => 'required',
-                'no_dufan_card' => 'nullable|max:20',
+                'no_dufan_card' => 'required|max:20',
+                'dufan_card' => 'required|file|mimes:pdf,png,jpg,jpeg|max:2048',
                 'family_fullname.*' => 'required',
                 'status_relation.*' => 'required',
+                'family_no_card.*' => 'required',
                 'family_upload_file.*' => 'nullable|file|mimes:pdf,png,jpg,jpeg|max:2048',
             ]);
+
+            
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->getMessageBag()->toArray()]);
         }
+
+        
 
         $find_form = DataForm::where('nik', $request->nik)->first();
 
@@ -133,7 +140,7 @@ class DataFormController extends Controller
             'code' => 'required|max:20',
         ]);
 
-        if ($request->code == '@CabinindoDufan2024!') {
+        if ($request->code == 'famday24') {
             return redirect()->route('form_data_personal_create')->with('code', bcrypt($request->code));
         }
 
@@ -144,7 +151,7 @@ class DataFormController extends Controller
     {
         $parameterValue = session('code');
 
-        if (Hash::check('@CabinindoDufan2024!', $parameterValue)) {
+        if (Hash::check('famday24', $parameterValue)) {
             // Kata sandi cocok
             return view('data-personal.create');
         }
