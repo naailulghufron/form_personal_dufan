@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('rt_ktp')->nullable();
             $table->string('rw_ktp')->nullable();
             $table->string('kelurahan_ktp')->nullable();
-            $table->string('kecamatan_ktp')->nullablee();
+            $table->string('kecamatan_ktp')->nullable();
             $table->string('kota_ktp')->nullable();
             $table->string('provinsi_ktp')->nullable();
             $table->string('kode_pos_ktp')->nullable();
