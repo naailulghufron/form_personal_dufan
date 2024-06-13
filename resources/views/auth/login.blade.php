@@ -26,7 +26,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-danger" style="width: 38rem;">
             <div class="card-header text-center">
-                <a href="/" class="h1"><b>INVENTORY </b>CABIND</a>
+                <a href="/" class="h1"><b>LOGIN</b></a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
