@@ -175,7 +175,7 @@
                                 <div class="form-group">
                                     <label class="required">NIK</label>
                                         <input type="number" id="nik" name="nik" class="form-control form-control-sm text-uppercase" placeholder="Masukan 5 Digit NIK" required>
-                                        <small class="text-primary">Contoh : 00000</small>
+                                        <small class="text-primary">Contoh : 09999</small>
                                 </div>
                                 <div class="form-group">
                                     <label class="required">Nama Lengkap</label>

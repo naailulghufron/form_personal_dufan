@@ -25,11 +25,11 @@ class DataFormController extends Controller
                 'dufan_card' => 'nullable|file|mimes:pdf,png,jpg,jpeg|max:2048',
                 'nik' => 'required|numeric|digits:5',
                 'namaLengkap' => 'required',
-                'no_dufan_card' => 'required|max:20',
+                'no_dufan_card' => 'required|size:20',
                 'dufan_card' => 'required|file|mimes:pdf,png,jpg,jpeg|max:2048',
                 'family_fullname.*' => 'required',
                 'status_relation.*' => 'required',
-                'family_no_card.*' => 'required',
+                'family_no_card.*' => 'required|size:20',
                 'family_upload_file.*' => 'nullable|file|mimes:pdf,png,jpg,jpeg|max:2048',
             ]);
 
