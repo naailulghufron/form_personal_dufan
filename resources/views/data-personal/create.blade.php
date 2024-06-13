@@ -159,8 +159,6 @@
                 <h6>Kuesioner ini bertujuan untuk menghimpun seluruh kartu Annual Pass Dufan 2023-2024 dari Cabinindo Putra 
                    <br> sebagai backup (data cadangan)  pada saat hari H family Day 2024 . 
                    <br>
-                   <br>
-                   Data ini hanya untuk anggota keluarga yang mengikuti Family Day 2024
                     </h6>
             </div>
             <hr>
